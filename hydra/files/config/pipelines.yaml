@@ -1,0 +1,3 @@
+defaults:
+- pipelines@pipeline_1: pipeline_1
+- pipelines@pipeline_2: pipeline_2

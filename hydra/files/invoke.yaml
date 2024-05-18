@@ -1,0 +1,18 @@
+# invoke.yaml
+defaults:
+- _self_
+- configs@pipelines: pipelines
+
+version: ${rc.pyproject_value:tool.poetry.version} # poetry package version
+
+env: dev
+user: ${oc.env:USER, runner}
+
+gcp:
+  project: xxx-${env}
+
+train:
+  mlflow:
+    use: True
+    tracking_uri: https://mlflow.${env}.xxx.com
+  output_dir: trained_models
